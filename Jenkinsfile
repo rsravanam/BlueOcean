@@ -18,7 +18,7 @@ node('master') {
 	        		if (isUnix()) {
 	        		sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean"
 	        		} else {
-	        		// bat(/"D:\Maven_339\apache-maven-3.3.9\bin\mvn" -Dmaven.test.failure.ignore clean/)
+	        		bat(/"D:\Maven_339\apache-maven-3.3.9\bin\mvn" -Dmaven.test.failure.ignore clean/)
 	        		echo "check out done"
 	        		}
 	        	}	
@@ -30,7 +30,7 @@ node('master') {
 	        		if (isUnix()) {
 	        		sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore install"
 	        		} else {
-	        		// bat(/"D:\Maven_339\apache-maven-3.3.9\bin\mvn" -Dmaven.test.failure.ignore install/)
+	        		bat(/"D:\Maven_339\apache-maven-3.3.9\bin\mvn" -Dmaven.test.failure.ignore install/)
 	        		echo "check out done"
 	        		}
 	        	}	
@@ -42,7 +42,7 @@ node('master') {
 	        		if (isUnix()) {
 	        		sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore compile"
 	        		} else {
-	        		// bat(/"D:\Maven_339\apache-maven-3.3.9\bin\mvn" -Dmaven.test.failure.ignore compile/)
+	        		bat(/"D:\Maven_339\apache-maven-3.3.9\bin\mvn" -Dmaven.test.failure.ignore compile/)
 	        		echo "check out done"
 	        		}
 	        	}	
