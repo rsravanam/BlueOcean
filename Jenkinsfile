@@ -82,6 +82,8 @@ node('master') {
 				}
 		}
 	} catch (e) {
+		def ws = env.Workspace
+		echo ws
 		currentBuild.result = "FAILED"
 		notifyFailed()
 		throw(e)
