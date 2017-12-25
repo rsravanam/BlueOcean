@@ -86,12 +86,14 @@ node('master') {
 		notifyFailed()
 		throw(e)
 	} 
-	def notifyFailed() {
-		
-		emailext (
-			subject: "FAILED: Job '${env.JOB_NAME}'",
-			body: '${JELLY_SCRIPT,template="jelly_script_template"}',
-			to: "sravanam1242.cloud@gmail.com"
-		)
-	}
+
+}
+
+def notifyFailed() {
+	
+	emailext (
+		subject: "FAILED: Job '${env.JOB_NAME}'",
+		body: '${JELLY_SCRIPT,template="jelly_script_template"}',
+		to: "sravanam1242.cloud@gmail.com"
+	)
 }
