@@ -87,4 +87,5 @@ node('master') {
       body: '${JELLY_SCRIPT,template="jelly_script_template"}',
       to: "sravanam1242.cloud@gmail.com.com"
     )
+  }	   
 }
