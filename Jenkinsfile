@@ -1,5 +1,5 @@
 node('master') {
-
+	try {
 //  def deploy = env.Environment
    stage('Code Checkout') { // for display purposes
       // Get some code from a GitHub repository
@@ -80,12 +80,18 @@ node('master') {
 				bat(/"D:\Maven_339\apache-maven-3.3.9\bin\mvn" -Dmaven.test.failure.ignore package/)
 			}
 		}
-   }   
+   }
+	}
+	cache (e) {
+		notifyFailed()
+		throw(e)
+	} 
    def notifyFailed() {
    emailext (
       subject: "FAILED: Job '${env.JOB_NAME}'",
       body: '${JELLY_SCRIPT,template="jelly_script_template"}',
       to: "sravanam1242.cloud@gmail.com.com"
     )
-  }	   
+  }
+  notifyFailed()
 }
