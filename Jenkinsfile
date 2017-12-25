@@ -82,6 +82,7 @@ node('master') {
 				}
 		}
 	} cache (e) {
+		currentBuild.result = "FAILED"
 		notifyFailed()
 		throw(e)
 	} 
