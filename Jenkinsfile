@@ -80,5 +80,11 @@ node('master') {
 				bat(/"D:\Maven_339\apache-maven-3.3.9\bin\mvn" -Dmaven.test.failure.ignore package/)
 			}
 		}
-   }     
+   }   
+   def notifyFailed() {
+   emailext (
+      subject: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+      body: "${JELLY_SCRIPT,template="jelly_script_template"}",
+      to: "some-email@some-domain.com"
+    )
 }
