@@ -1,9 +1,3 @@
-ARG  IMAGE_REPO=sravanam1242/private_docker
-ARG  IMAGE_NAME=ubuntu
-ARG  IMAGE_VERSION=14.04
+FROM node:7-alpine
 
-#1 our base image
-FROM ${IMAGE_REPO}:${IMAGE_NAME}-${IMAGE_VERSION}
-
-#2 Update the packages.
-RUN apt-get update
+RUN apk add -U subversion
