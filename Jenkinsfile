@@ -3,13 +3,12 @@ pipeline {
 	    dockerfile {
 			filename 'Dockerfile'
 			dir 'Docker-file'
-			additionalBuildArgs  '--build-arg version=1.0.2'
 		}
 	}
     stages {
         stage('Test') {
             steps {
-                sh 'echo hello'
+                echo 'hello'
             }
         }
     }
