@@ -2,7 +2,7 @@ pipeline {
     agent { 
 	    dockerfile {
 			filename 'Dockerfile'
-			dir '.'
+			dir 'Docker-file'
 			additionalBuildArgs  '--build-arg version=1.0.2'
 		}
 	}
